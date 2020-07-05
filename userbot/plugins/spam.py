@@ -10,7 +10,7 @@ from asyncio import wait
 
 from userbot.events import register
 
-@register(outgoing=True, pattern="^.breakspam")
+@register(outgoing=True, pattern="^.tspam")
 async def tmeme(e):
     tspam = str(e.text[7:])
     message = tspam.replace(" ", "")
