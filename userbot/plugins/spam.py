@@ -66,11 +66,11 @@ async def tiny_pic_spam(e):
                 "#PICSPAM \n\n"
                 "PicSpam was executed successfully"
                 )
-@register(outgoing=True, pattern="^.delayspam (.*)")
+@register(outgoing=True, pattern="^.delayspam")
 async def spammer(e):
-    spamDelay = float(e.pattern_match.group(1).split(' ', 2)[0])
-    counter = int(e.pattern_match.group(1).split(' ', 2)[1])
-    spam_message = str(e.pattern_match.group(1).split(' ', 2)[2])
+    counter = int(message[11:13])
+    spamDelay = int(message[13:14])
+    spam_message = int(message[14:])
     await e.delete()
     for i in range(1, counter):
         await e.respond(spam_message)
