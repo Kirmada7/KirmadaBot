@@ -84,7 +84,7 @@ async def spammer(e):
 #         await asyncio.wait([e.respond(spam_message) time.sleep(time) for i in range(counter)])
         for i in range(counter):
             await e.respond(spam_message)
-            await sleep(t)
+            await time.sleep(t)
         await e.delete()
         if LOGGER:
             await e.client.send_message(
