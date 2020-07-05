@@ -70,10 +70,11 @@ async def tiny_pic_spam(e):
 async def bigspam(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         message = e.text
-        counter = int(message[10:14])
-        spam_message = str(e.text[14:])
+        counter = int(message[10:13])
+        t = int(message[13:15])
+        spam_message = str(e.text[15:])
         for i in range(counter):
-            time.sleep(2)
+            time.sleep(t)
             await e.respond(spam_message)
         await e.delete()
         if LOGGER:
