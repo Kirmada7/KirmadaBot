@@ -27,7 +27,7 @@ async def spammer(e):
                 "Spam was executed successfully"
                 )
                                
-@register(outgoing=True, pattern="^.bigstart")
+@register(outgoing=True, pattern="^.bigst")
 async def bigspam(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         message = e.text
@@ -77,14 +77,13 @@ async def spammer(e):
 @register(outgoing=True, pattern="^.dstart")
 async def spammer(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        message = e.text
-        counter = int(message[8:10])
-        t = int(message[10:12])
-        spam_message = str(e.text[12:])
+       message = e.text
+        counter = int(message[7:9])
+        spam_message = str(e.text[9:])
 #         await asyncio.wait([e.respond(spam_message) time.sleep(time) for i in range(counter)])
         for i in range(counter):
             await e.respond(spam_message)
-            await time.sleep(t)
+            await time.sleep(5)
         await e.delete()
         if LOGGER:
             await e.client.send_message(
