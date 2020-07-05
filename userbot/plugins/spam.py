@@ -66,13 +66,13 @@ async def tiny_pic_spam(e):
                 "#PICSPAM \n\n"
                 "PicSpam was executed successfully"
                 )
-@register(outgoing=True, pattern="^.bigstarr")
+@register(outgoing=True, pattern="^.delaystart")
 async def bigspam(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         message = e.text
-        counter = int(message[10:13])
-        t = int(message[13:15])
-        spam_message = str(e.text[15:])
+        counter = int(message[12:15])
+        t = int(message[15:17])
+        spam_message = str(e.text[17:])
         for i in range(counter):
             time.sleep(t)
             await e.respond(spam_message)
