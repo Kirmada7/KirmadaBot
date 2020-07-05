@@ -1,6 +1,6 @@
 import asyncio
 from asyncio import wait
-import time
+
 
 from userbot.events import register
 
@@ -74,22 +74,5 @@ async def spammer(e):
             LOGGER_GROUP, "#DelaySPAM\n"
             "DelaySpam was executed successfully")
         
-@register(outgoing=True, pattern="^.dstart")
-async def spammer(e):
-    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-       message = e.text
-        counter = int(message[7:9])
-        spam_message = str(e.text[9:])
-#         await asyncio.wait([e.respond(spam_message) time.sleep(time) for i in range(counter)])
-        for i in range(counter):
-            await e.respond(spam_message)
-            await time.sleep(5)
-        await e.delete()
-        if LOGGER:
-            await e.client.send_message(
-                LOGGER_GROUP,
-                "#SPAM \n\n"
-                "Spam was executed successfully"
-                )
         
         
