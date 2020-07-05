@@ -79,12 +79,12 @@ async def spammer(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         message = e.text
         counter = int(message[8:10])
-        time = int(message[10:12])
+        t = int(message[10:12])
         spam_message = str(e.text[12:])
 #         await asyncio.wait([e.respond(spam_message) time.sleep(time) for i in range(counter)])
         for i in range(counter):
             await e.respond(spam_message)
-            time.sleep(time)
+            await sleep(t)
         await e.delete()
         if LOGGER:
             await e.client.send_message(
