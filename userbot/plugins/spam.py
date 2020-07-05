@@ -1,9 +1,3 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
-#
-# Licensed under the Raphielscape Public License, Version 1.b (the "License");
-# you may not use this file except in compliance with the License.
-#
-
 import asyncio
 from asyncio import wait
 import time
@@ -81,21 +75,20 @@ async def spammer(e):
             "DelaySpam was executed successfully")
         
 @register(outgoing=True, pattern="^.dstart")
-async def bigspam(e):
+async def spammer(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         message = e.text
-        time = int(message[14:16])
-        counter = int(message[10:14])
-        spam_message = str(e.text[16:])
-        for i in range(1, counter):
-            time.sleep(time)
-            await e.respond(spam_message)
+        counter = int(message[8:10])
+        time = int(message[10:12])
+        spam_message = str(e.text[12:])
+        await asyncio.wait([e.respond(spam_message) for i in range(counter)])
+        await time.sleep(time)
         await e.delete()
         if LOGGER:
             await e.client.send_message(
                 LOGGER_GROUP,
-                "#BIGSPAM \n\n"
-                "Bigspam was executed successfully"
+                "#SPAM \n\n"
+                "Spam was executed successfully"
                 )
         
         
