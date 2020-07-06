@@ -1,5 +1,6 @@
 
-
+from telethon import events
+from datetime import datetime
 import asyncio
 from asyncio import wait
 import time
@@ -81,3 +82,13 @@ async def bigspam(e):
                 "#BIGSPAM \n\n"
                 "Bigspam was executed successfully"
                 )
+            
+@command(pattern="^.ping")
+async def _(event):
+    if event.fwd_from:
+        return
+    start = datetime.now()
+    await event.edit("Pong!")
+    end = datetime.now()
+    ms = (end - start).microseconds / 1000
+    await event.edit("<3 Pong!\n{}".format(ms))
