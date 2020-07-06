@@ -6,24 +6,24 @@
 
 import asyncio
 from asyncio import wait
-import time
+
 
 from userbot.events import register
 
-@register(outgoing=True, pattern="^.breakspam")
+@register(outgoing=True, pattern="^.tspam")
 async def tmeme(e):
-    tspam = str(e.text[11:])
+    tspam = str(e.text[7:])
     message = tspam.replace(" ", "")
     for letter in message:
         await e.respond(letter)
     await e.delete()
 
-@register(outgoing=True, pattern="^.start")
+@register(outgoing=True, pattern="^.spam")
 async def spammer(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         message = e.text
-        counter = int(message[7:9])
-        spam_message = str(e.text[9:])
+        counter = int(message[6:8])
+        spam_message = str(e.text[8:])
         await asyncio.wait([e.respond(spam_message) for i in range(counter)])
         await e.delete()
         if LOGGER:
@@ -33,12 +33,12 @@ async def spammer(e):
                 "Spam was executed successfully"
                 )
                                
-@register(outgoing=True, pattern="^.bigstart")
+@register(outgoing=True, pattern="^.bigspam")
 async def bigspam(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         message = e.text
-        counter = int(message[10:14])
-        spam_message = str(e.text[14:])
+        counter = int(message[9:13])
+        spam_message = str(e.text[13:])
         for i in range(1, counter):
             await e.respond(spam_message)
         await e.delete()
@@ -66,20 +66,16 @@ async def tiny_pic_spam(e):
                 "#PICSPAM \n\n"
                 "PicSpam was executed successfully"
                 )
-@register(outgoing=True, pattern="^.delaystart")
-async def bigspam(e):
-    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        message = e.text
-        counter = int(message[12:15])
-        t = int(message[15:17])
-        spam_message = str(e.text[17:])
-        for i in range(counter):
-            time.sleep(t)
-            await e.respond(spam_message)
-        await e.delete()
-        if LOGGER:
-            await e.client.send_message(
-                LOGGER_GROUP,
-                "#BIGSPAM \n\n"
-                "Bigspam was executed successfully"
-                )
+@register(outgoing=True, pattern="^.delayspam (.*)")
+async def spammer(e):
+    spamDelay = float(e.pattern_match.group(1).split(' ', 2)[0])
+    counter = int(e.pattern_match.group(1).split(' ', 2)[1])
+    spam_message = str(e.pattern_match.group(1).split(' ', 2)[2])
+    await e.delete()
+    for i in range(1, counter):
+        await e.respond(spam_message)
+        await sleep(spamDelay)
+    if LOGGER:
+        await e.client.send_message(
+            LOGGER_GROUP, "#DelaySPAM\n"
+            "DelaySpam was executed successfully")
