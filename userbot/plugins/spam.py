@@ -83,16 +83,4 @@ async def bigspam(e):
                 "Bigspam was executed successfully"
                 )
             
-@command(pattern="^.disc")
-async def _(event):
-    if event.fwd_from:
-        return
-    await event.edit("Turning KirmadaBot off ...Manually turn me on later. To turn on type .connect")
-    await borg.disconnect()
-   
-@command(pattern="^.connect")
-async def _(event):
-    if event.fwd_from:
-        return
-    await borg.start()
-   
+
