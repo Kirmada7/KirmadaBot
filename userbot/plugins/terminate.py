@@ -24,8 +24,7 @@ from userbot.utils import admin_cmd
 #     quit()
 
 
-# @register(outgoing=True, pattern="^.stop")
-@borg.on(outgoing=True, pattern="^.stop")
+@borg.on(admin_cmd("^.stop"))
 async def _(event):
     if event.fwd_from:
         return
