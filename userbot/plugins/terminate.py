@@ -1,9 +1,4 @@
-"""
-Restart or Terminate the bot from any chat
-Available Commands:
-.restart
-.shutdown
-"""
+
 
 from telethon import events
 import asyncio
@@ -12,7 +7,24 @@ import sys
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd("restart"))
+# @borg.on(admin_cmd("restart"))
+# async def _(event):
+#     if event.fwd_from:
+#         return
+#     # await asyncio.sleep(2)
+#     # await event.edit("Restarting [██░] ...\n`.ping` me or `.help` to check if I am online")
+#     # await asyncio.sleep(2)
+#     # await event.edit("Restarting [███]...\n`.ping` me or `.help` to check if I am online")
+#     # await asyncio.sleep(2)
+#     await event.edit("Restarted. `.alive` me or `.help` to check if I am online")
+#     await borg.disconnect()
+#     # https://archive.is/im3rt
+#     os.execl(sys.executable, sys.executable, *sys.argv)
+#     # You probably don't need it but whatever
+#     quit()
+
+
+@register(outgoing=True, pattern="^.stop")
 async def _(event):
     if event.fwd_from:
         return
@@ -27,11 +39,3 @@ async def _(event):
     os.execl(sys.executable, sys.executable, *sys.argv)
     # You probably don't need it but whatever
     quit()
-
-
-@borg.on(admin_cmd("shutdown"))
-async def _(event):
-    if event.fwd_from:
-        return
-    await event.edit("Turning off ...Manually turn me on later")
-    await borg.disconnect()
