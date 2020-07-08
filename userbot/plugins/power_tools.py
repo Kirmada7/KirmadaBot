@@ -21,7 +21,7 @@ async def _(event):
     # await asyncio.sleep(2)
     # await event.edit("Restarting [███]...\n`.ping` me or `.help` to check if I am online")
     # await asyncio.sleep(2)
-    await event.edit("Restarted. `.alive` me or `.help` to check if I am online")
+    await event.edit("KirmadaBot stopped!! Wait 30 sec to start sending commands")
     await borg.disconnect()
     # https://archive.is/im3rt
     os.execl(sys.executable, sys.executable, *sys.argv)
