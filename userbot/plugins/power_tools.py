@@ -12,7 +12,7 @@ import sys
 from userbot.utils import admin_cmd
 
 
-@borg.on(admin_cmd("stop"))
+@borg.on(admin_cmd("restart"))
 async def _(event):
     if event.fwd_from:
         return
