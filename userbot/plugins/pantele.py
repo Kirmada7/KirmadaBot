@@ -25,7 +25,7 @@ async def generate(e):
         month = random.randint(1, 12)
         year = random.randint(1950, 2000)
 
-        pan = "🦖 PAN DETAILS 🦖" + "\nName: " + name + "\nDate of Birth: " + str(date) + "/" + str(month) + "/" + str(
+        pan = "❤️ PAN DETAIL ❤️\n" + "\nName: " + name + "\nDate of Birth: " + str(date) + "/" + str(month) + "/" + str(
             year) + "\nPAN Number: " + "{one}{two}{three}{four}".format(one=start, two=sr_wrd, three=mid, four=last)
         # print("Name: " + name)
         # print("Date of Birth: " + str(date) + "/" + str(month) + "/" + str(year))
