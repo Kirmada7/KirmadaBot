@@ -8,7 +8,7 @@ from userbot.events import register
 async def generate(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         message = e.text
-        name = int(message[5:])
+        name = str(message[5:])
         space_fnd = name.find(" ")
         space_fnd = space_fnd + 1
         sr_wrd = str(name[space_fnd:space_fnd + 1]).upper()
