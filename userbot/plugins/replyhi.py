@@ -12,7 +12,7 @@ async def ola(event):
             await borg.send_mesage(Config.PLUGIN_CHANNEL,
              "Yo bro hello!! What's up XD")
 
-        except as Exception as e:
+        except:
             borg.send_message(  
                 event.chat_id,"Error",
                 reply_to=event.message.id,
