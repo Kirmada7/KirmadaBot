@@ -3,7 +3,7 @@ from asyncio import wait
 import re, bs4, requests
 
 
-import register from userbot.events
+from userbot.events import register 
 
 def gang(input_text)
     params = {"translatetext": input_text}
