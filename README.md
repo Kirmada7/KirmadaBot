@@ -1,4 +1,4 @@
-All the credit goes to @pureindialover
+
 
 
 
@@ -23,7 +23,7 @@ All the credit goes to @pureindialover
 
 Simply clone the repository and run the main file:
 ```sh
-git clone https://github.com/indianbhaiya/IndianBot
+git clone https://github.com/Kirmada7/KirmadaBot
 cd Indianbot
 virtualenv -p /usr/bin/python3 venv
 . ./venv/bin/activate
