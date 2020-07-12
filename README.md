@@ -1,4 +1,4 @@
-# KirmadaBot 🇮🇳
+All the credit goes to @pureindialover
 
 
 
