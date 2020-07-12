@@ -1,7 +1,7 @@
 {
-  "name": "IndianBot",
-  "description": "Userbot created by a IndianBhai and join https://t.me/IndianArMyGiveaway for any problems or support",
-  "logo": "https://telegra.ph/file/b6cd017959adc2814db5f.jpg",
+  "name": "KirmadaBot",
+  "description": "Kirmada bot created by Kirmada join https://t.me/sellerhub for more.",
+  "logo": "https://i.gyazo.com/5fdefe3ed8bcac26b994db580d91ff2f.png",
     "keywords": [
     "telegram",
     "userbot",
@@ -9,7 +9,7 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/indianbhaiya/IndianBot/",
+  "repository": "https://github.com/Kirmada7/KirmadaBot/",
   "website": "#TODO",
   "success_url": "#TODO",
   "env": {
