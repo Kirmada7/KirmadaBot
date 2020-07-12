@@ -15,7 +15,7 @@ from userbot.events import register
 #     giz_text = giz[37].strip("\r\n")
 #     return giz_text
 
-@client.on(events.NewMessage(pattern='(?i)hello.+'))
+@register(events.NewMessage(pattern='(?i)hello.+'))
 async def handler(event):
     rep = gang("hey what's up?")
     await event.reply(rep)
