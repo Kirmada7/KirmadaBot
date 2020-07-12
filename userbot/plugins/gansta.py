@@ -1,5 +1,5 @@
-import events from telethon
-import wait from asyncio
+from telethon import events 
+from asyncio import wait 
 import re, bs4, requests
 
 
