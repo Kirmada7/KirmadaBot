@@ -80,7 +80,7 @@ async def bigspam(e):
             await e.client.send_message(
                 LOGGER_GROUP,
                 "#BIGSPAM \n\n"
-                "Bigspam was executed successfully"
+                "Bigspam was executed successfully by kirmada"
                 )
             
 
