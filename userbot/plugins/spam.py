@@ -82,5 +82,5 @@ async def bigspam(e):
                 "#BIGSPAM \n\n"
                 "Bigspam was executed successfully by kirmada"
                 )
-            
+        #ok    
 
